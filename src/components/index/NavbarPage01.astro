@@ -1,26 +1,37 @@
-<div id="home" class="top">
-  <!-- Navbar -->
-  <div class="bar theme-bg-01 card left-align large">
-    <button class="bar-item button hide-medium hide-large right padding-large hover-white large" aria-label="hamburger" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </button>
-    <a href="#home" class="bar-item button padding-large white">Home</a>
-    <a href="#whoAre" class="bar-item button hide-small padding-large hover-white">Quienes somos?</a>
-    <a href="#help" class="bar-item button hide-small padding-large hover-white">Con tu ayuda</a>
-    <a href="#here" class="bar-item button hide-small padding-large hover-white">Dona aquí</a>
-  </div>  
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="bar-block white hide hide-large hide-medium large">
-    <a href="#whoAre" class="bar-item button padding-large">Quienes somos?</a>
-    <a href="#help" class="bar-item button padding-large">Con tu ayuda</a>
-    <a href="#here" class="bar-item button padding-large">Dona aquí</a>
+<!-- Navbar -->
+<nav class='theme-bgColor-01'>
+  <div>
+    <ul>
+      <li class='hover-grey'>
+        <a href="/">
+          <span class='d-lg-block'>Home</span>
+          <span class="d-sm-block">H</span>
+        </a>
+      </li>
+      <li class='hover-white'>
+        <a href="#home">
+          <span class='d-lg-block'>Inicio</span>
+          <i class="fas fa-home d-sm-block"></i>
+        </a>
+      </li>
+      <li class='hover-white'>
+        <a href="#whoAre">
+          <span class='d-lg-block'>Quienes somos?</span>
+          <i class="fas fa-users d-sm-block"></i>
+        </a>
+      </li>
+      <li class='hover-white'>
+        <a href="#help">
+          <span class='d-lg-block'>Con tu ayuda</span>
+          <i class="fas fa-heart d-sm-block"></i>
+        </a>
+      </li>
+      <li class='hover-white'>
+        <a href="#here">
+          <span class='d-lg-block'>Dona aquí</span>
+          <i class="fas fa-hand-holding-usd d-sm-block"></i>
+        </a>
+      </li>
+    </ul>
   </div>
-</div>
-
-<script>
-    const hamburgerButton   =  document.querySelector('button[aria-label="hamburger"]');
-    const navDemo           =  document.getElementById('navDemo');
-    hamburgerButton.addEventListener('click', () => {
-        navDemo.classList.toggle('show');
-    });
-</script>
+</nav>  
