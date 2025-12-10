@@ -1,0 +1,42 @@
+---
+const ogDescription = 'Aviso de privacidad Lift Apoyo';
+const ogURL = Astro.site?.toString() ?? "https://lift-donations.web.app";
+const { hideCookies = false } = Astro.props;
+import CookieBanner from "../components/general/CookieBanner.astro";
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:image" content=`${ogURL}/ogImage.jpg` />
+		<meta property="og:title" content="Lift Donaciones" />
+		<meta property="og:description" content={ogDescription} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={ogURL} />
+		<meta name="twitter:card" content={ogDescription} />
+		<meta name="twitter:image" content=`${ogURL}/ogImage.jpg` />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+		<link rel="stylesheet" href="https://alexestudio86.github.io/ValCSS/css/valCSS.reset.css" />
+		<link rel="stylesheet" href="/styles/template.css" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Lift Apoyo | Aviso de Privacidad</title>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WX4X9SKG');</script>
+<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX4X9SKG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+		<slot />
+		{!hideCookies && <CookieBanner />}
+	</body>
+</html>
