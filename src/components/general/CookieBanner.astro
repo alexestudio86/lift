@@ -96,21 +96,35 @@ import cookiImg from "../../assets/cookie.svg";
     const cookiesContainers = document.querySelectorAll('div#aviso-cookies, div#fondo-aviso-cookies');
     const bodyNoScroll = document.querySelector('body');
 
-    dataLayer = [];
 
-    if(!localStorage.getItem('cookies-aceptadas')){
+    if(!localStorage.getItem("consentGranted")){
         bodyNoScroll.classList.add('no-scroll');
         Array.from(cookiesContainers).map( cc => cc.removeAttribute('hidden') );
     } else {
-        dataLayer.push({'event': 'cookies-aceptadas'});
 
     }
 
     botonAceptarCookies.addEventListener('click', () => {
         Array.from(cookiesContainers).map( cc => cc.setAttribute('hidden', true) );
         bodyNoScroll.classList.remove('no-scroll');
-        localStorage.setItem('cookies-aceptadas', true);
-        dataLayer.push({'event': 'cookies-aceptadas'});
+        localStorage.setItem("consentGranted", "true");
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'update', {
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            ad_storage: 'granted',
+            analytics_storage: 'granted'
+        });
+
+
+        // Load Tag Manager script.
+        var gtmScript = document.createElement('script');
+        gtmScript.async = true;
+        gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-WX4X9SKG';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(gtmScript,firstScript);
     });
 
 </script>
